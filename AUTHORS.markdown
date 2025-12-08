@@ -1,5 +1,9 @@
 # HandBrake Authors
 
+Natalie Spiva (sprungles)
+- Additional Codec support
+- sourcing of free licensing.
+
 Eric Petit (titer)
 
 - Original author

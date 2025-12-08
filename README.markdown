@@ -40,3 +40,12 @@ Please read our [Translations Guide](https://github.com/HandBrake/HandBrake/blob
 <a href="https://www.macstadium.com/"><img width="200" alt="MacStadium" src="https://uploads-ssl.webflow.com/5ac3c046c82724970fc60918/5c019d917bba312af7553b49_MacStadium-developerlogo.png"></a>
 
 and to many others who have contributed! [Thanks](THANKS.markdown)
+
+## Funding and Licensing
+
+The HandBrake Team is a small group of volunteers.  We do not receive any funding from any company or organization.
+
+HandBrake is free and open source software.  However, it makes use of many third party libraries which may have different licensing terms.  Please see the [Credits](THANKS.markdown) for a list of these libraries and their licenses.
+
+**Important Note on Codecs:**
+Some included codecs (e.g. FDK AAC) may be incompatible with the GPLv2 license if distributed in binary form.  Users building from source are responsible for ensuring compliance with all applicable licenses.

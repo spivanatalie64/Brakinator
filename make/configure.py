@@ -1421,7 +1421,7 @@ def createCLI( cross = None ):
     grp.add_argument( '--disable-numa', dest="enable_numa", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
 
     h = IfHost( 'FDK AAC audio encoder', '*-*-*', none=argparse.SUPPRESS ).value
-    grp.add_argument( '--enable-fdk-aac', dest="enable_fdk_aac", default=False, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
+    grp.add_argument( '--enable-fdk-aac', dest="enable_fdk_aac", default=True, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
     grp.add_argument( '--disable-fdk-aac', dest="enable_fdk_aac", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
 
     h = 'FFmpeg AAC audio encoder' if (host_tuple.match( '*-*-darwin*' )) else argparse.SUPPRESS
@@ -1429,7 +1429,7 @@ def createCLI( cross = None ):
     grp.add_argument( '--disable-ffmpeg-aac', dest="enable_ffmpeg_aac", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
 
     h = 'MediaFoundation video encoder' if mf_supported else argparse.SUPPRESS
-    grp.add_argument( '--enable-mf', dest="enable_mf", default=False, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
+    grp.add_argument( '--enable-mf', dest="enable_mf", default=IfHost(True, '*-*-mingw*', none=False).value, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
     grp.add_argument( '--disable-mf', dest="enable_mf", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
 
     h = 'Nvidia NVENC video encoder' if nvenc_supported else argparse.SUPPRESS
@@ -1437,7 +1437,7 @@ def createCLI( cross = None ):
     grp.add_argument( '--disable-nvenc', dest="enable_nvenc", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
 
     h = 'Nvidia NVDEC video decoder' if nvenc_supported else argparse.SUPPRESS
-    grp.add_argument( '--enable-nvdec', dest="enable_nvdec", default=False, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
+    grp.add_argument( '--enable-nvdec', dest="enable_nvdec", default=True, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
     grp.add_argument( '--disable-nvdec', dest="enable_nvdec", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
 
     h = 'Intel QSV video encoder/decoder' if qsv_supported else argparse.SUPPRESS
