@@ -43,9 +43,4 @@ and to many others who have contributed! [Thanks](THANKS.markdown)
 
 ## Funding and Licensing
 
-The HandBrake Team is a small group of volunteers.  We do not receive any funding from any company or organization.
-
-HandBrake is free and open source software.  However, it makes use of many third party libraries which may have different licensing terms.  Please see the [Credits](THANKS.markdown) for a list of these libraries and their licenses.
-
-**Important Note on Codecs:**
-Some included codecs (e.g. FDK AAC) may be incompatible with the GPLv2 license if distributed in binary form.  Users building from source are responsible for ensuring compliance with all applicable licenses.
+Please see [FUNDING_AND_LICENSING.md](FUNDING_AND_LICENSING.md) for detailed information regarding the project's funding (volunteer-based), licensing (GPLv2), and important legal details regarding specific codecs like FDK AAC.

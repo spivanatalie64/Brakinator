@@ -26,6 +26,7 @@ FFMPEG.BUILD.env                = PATH="$(call fn.ABSOLUTE,$(CONTRIB.build/)bin)
 
 FFMPEG.CONFIGURE.extra = \
     --enable-gpl \
+    --enable-pic \
     --disable-doc \
     --disable-programs \
     --disable-avdevice \
@@ -109,6 +110,7 @@ FFMPEG.CONFIGURE.extra += \
     --enable-muxer=webm \
     --enable-muxer=mov \
     --enable-muxer=mp4 \
+    --enable-muxer=avi \
     --enable-muxer=psp \
     --enable-muxer=ipod \
     --enable-muxer=ass \

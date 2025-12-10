@@ -1,0 +1,43 @@
+# Maintainer: Natalie <natalie@acreetionos.org>
+pkgname=brakinator-git
+pkgver=r13248.a0ea6d2a3
+pkgrel=1
+pkgdesc="Brakinator - Enhanced HandBrake fork with full codec support"
+arch=('x86_64')
+url="https://github.com/spivanatalie64/Brakinator"
+license=('GPL2')
+depends=('libxml2' 'jansson' 'libass' 'libvpx' 'libtheora' 'libvorbis' 'opus' 'lame' 'x264' 'x265' 'libdvdnav' 'libdvdread' 'libbluray' 'fribidi' 'harfbuzz' 'fontconfig' 'freetype2' 'numactl' 'lz4' 'xz')
+makedepends=('git' 'meson' 'nasm' 'cmake' 'python' 'clang')
+provides=("brakinator")
+conflicts=("brakinator")
+# Using the local checkout for reference, but pointing to remote for the package
+source=("git+https://github.com/spivanatalie64/Brakinator.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/Brakinator"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cd "$srcdir/Brakinator"
+  
+  # Configure with features enabled
+  ./configure --prefix=/usr \
+              --enable-gtk \
+              --disable-gst \
+              --enable-fdk-aac \
+              --enable-nvdec \
+              --enable-nvenc \
+              --enable-qsv \
+              --enable-vce \
+              --enable-libdovi \
+              --enable-x265 \
+              --launch-jobs=$(nproc) \
+              --launch
+}
+
+package() {
+  cd "$srcdir/Brakinator/build"
+  make DESTDIR="$pkgdir" install
+}
