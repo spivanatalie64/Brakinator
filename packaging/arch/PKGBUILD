@@ -1,6 +1,6 @@
 # Maintainer: Natalie <natalie@acreetionos.org>
 pkgname=brakinator-git
-pkgver=r13251.6f1532baa
+pkgver=r13252.f3426979a
 pkgrel=1
 pkgdesc="Brakinator - Enhanced HandBrake fork with full codec support"
 arch=('x86_64')
